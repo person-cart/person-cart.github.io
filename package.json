@@ -1,0 +1,30 @@
+{
+  "name": "Person_Cart",
+  "version": "1.0.0",
+  "description": "Person_Cart",
+
+  "devDependencies": {
+    "grunt": "^0.4",
+    "grunt-autoprefixer": "~3.0.0",
+    "grunt-cli": "~0.1",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-compress": "~1.2",
+    "grunt-contrib-concat": "~0.5",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "~0.14",
+    "grunt-contrib-less": "~1.0",
+    "grunt-contrib-uglify": "~0.11",
+    "grunt-contrib-watch": "~0.6",
+    "grunt-css-clean": "^0.1.0",
+    "grunt-css-purge": "0.0.4",
+    "grunt-cssbeautifier": "^0.1.2",
+    "grunt-embed-fonts": "^0.1.3",
+    "grunt-group-css-media-queries": "^1.0.1",
+    "grunt-lesshint": "^1.4.0",
+    "grunt-modernizr": "^1.0.2",
+    "grunt-postcss": "^0.8.0",
+    "grunt-preprocess": "~5.0",
+    "jit-grunt": "^0.10.0"
+  }
+
+}

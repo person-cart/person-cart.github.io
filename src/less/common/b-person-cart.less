@@ -1,0 +1,132 @@
+.b-person-cart{
+  position: relative;
+  max-width: 1260px;
+}
+
+.b-person-cart__aside{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 348px;
+  height: 100%;
+  background-color: @color-background-aside;
+}
+
+/*content*/
+.b-person-cart__content{
+  margin-left: 348px;
+  border-top: 1px solid @color-border-default;
+  border-right: 1px solid @color-border-default;
+  border-bottom: 1px solid @color-border-default;
+}
+
+/*person-header*/
+.b-person-cart__person-header{
+  text-align: center;
+  padding: 25px 0;
+  border-bottom: 1px solid @color-border-default;
+}
+
+.b-person-cart__person-name{
+  font-family: @type-default;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.b-person-cart__person-post{
+  font-family: @type-default;
+  font-size: 20px;
+  color: @color-type-dark-light;
+}
+
+/*Cart info*/
+.b-person-cart__info{
+  .clearfix();
+}
+
+
+.b-person-cart__location,
+.b-person-cart__price{
+  .border-box();
+  float: left;
+  padding: 25px 60px 20px 58px;
+}
+
+.b-person-cart__location{
+  width: 40%;
+  border-right: 1px solid @color-border-default;
+
+}
+
+.b-person-cart__price{
+  width: 60%;
+
+}
+
+
+/*Cart price*/
+
+.b-person-cart-table-price{
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+
+.b-person-cart-table-price__desc,
+.b-person-cart-table-price__value{
+  .b-type-default();
+  padding-bottom: 5px;
+}
+
+/*reviews*/
+.b-person-cart__reviews{
+  padding-top: 30px;
+  padding-left: 58px;
+}
+
+
+/*text*/
+.b-person-cart__sub-title{
+  font-family: @type-default;
+  color: @color-type-default;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.b-type-default(){
+  font-family: @type-default;
+  color: @color-type-default;
+  font-size: 18px;
+}
+
+
+
+
+/*link*/
+.b-person-cart__more{
+  font-size: 16px;
+  font-family: @type-default;
+}
+
+
+.b-person-cart__link{
+  color: @color-type-accent;
+  text-decoration: none;
+  &:hover{
+    color: @color-type-default;
+    text-decoration: none;
+    .b-person-cart__link-underline{
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.b-person-cart__link-underline{
+  border-bottom: 1px solid tint(@color-type-accent, 50%);
+}
+
+/*button*/
