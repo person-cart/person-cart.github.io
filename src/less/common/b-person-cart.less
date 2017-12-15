@@ -3,6 +3,7 @@
   max-width: 1260px;
 }
 
+/*aside*/
 .b-person-cart__aside{
   position: absolute;
   left: 0;
@@ -12,9 +13,39 @@
   background-color: @color-background-aside;
 }
 
+.b-person-cart__aside-inner{
+  padding: 32px;
+  background-color: @color-background-aside;
+}
+
+.b-person-cart__person-pic{
+  width: 100%;
+  img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.b-person-cart__rating{
+  .clearfix();
+  max-width: 170px;
+  margin: 15px auto 0;
+}
+
+.b-person-cart__star{
+  width: 20%;
+  margin-left: 8px;
+  background-color: gray;
+  &:first-child{
+    margin-left: 0;
+  }
+}
+
 /*content*/
 .b-person-cart__content{
   margin-left: 348px;
+  padding-bottom: 30px;
   border-top: 1px solid @color-border-default;
   border-right: 1px solid @color-border-default;
   border-bottom: 1px solid @color-border-default;
@@ -81,9 +112,14 @@
 }
 
 /*reviews*/
-.b-person-cart__reviews{
+.b-person-cart-reviews{
   padding-top: 30px;
   padding-left: 58px;
+}
+
+.b-person-cart-reviews__comment{
+  font-size: 18px;
+  font-family: "Arial Narrow", Arial, sans-serif;
 }
 
 
