@@ -21,6 +21,8 @@ module.exports = function(grunt) {
         //     }
         // },
 
+
+
         less: {
             'theme': {
                 src: 'src/less/style.less',
@@ -32,25 +34,20 @@ module.exports = function(grunt) {
             // }
         },
 
+        svg2string: {
+            elements: {
+                options: {
+                    //wrapLines: false
+                },
+                files: {
+                    'dist/js/set-icons.js': [
+                        'src/icons/icon-set.svg'
+                    ]
+                }
+            }
+        },
+
         copy: {
-            'vendor': {
-                files: [
-                    {
-                        expand: true,
-                        dot: true,
-                        cwd: 'bower_components/bootstrap/dist',
-                        src: ['fonts/*.*'],
-                        dest: 'web/dist'
-                    },
-                    {
-                        expand: true,
-                        dot: true,
-                        cwd: 'bower_components/font-awesome/fonts',
-                        src: ['*.*'],
-                        dest: 'web/dist/fonts'
-                    }
-                ]
-            },
             'theme': {
                 files: [
                     {
@@ -129,8 +126,8 @@ module.exports = function(grunt) {
         },
 
         build: {
-            watch: ['clean:before', /*'lesshint',*/ 'preprocess', 'less', /*'copy',*/ 'group_css_media_queries', 'css_clean', 'css_purge',  'cssmin', 'clean:after'],
-            dist: ['clean:before', /*'lesshint',*/ 'preprocess', 'less', /*'copy',*/ 'group_css_media_queries', 'css_clean', 'css_purge', 'cssmin', 'clean:after']
+            watch: ['clean:before', /*'lesshint',*/  'preprocess', 'less', 'copy', 'group_css_media_queries', 'css_clean', 'css_purge',  'cssmin', 'clean:after'],
+            dist: ['clean:before', /*'lesshint',*/ 'svg2string',  'preprocess', 'less', 'copy', 'group_css_media_queries', 'css_clean', 'css_purge', 'cssmin', 'clean:after']
         }
     });
 
@@ -141,3 +138,11 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['build:dist']);
 };
+
+
+// gulp.task('default', function () {
+//     return gulp.src('src/**/*.svg')
+//         .pipe(svgstore({ inlineSvg: true }))
+//         .pipe(svg2string())
+//         .pipe(gulp.dest('dest'));
+// });

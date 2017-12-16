@@ -1,21 +1,42 @@
 .b-person-cart{
+  .clearfix();
   position: relative;
-  max-width: 100%;
+  width: 100%;
+  border-right: 1px solid @color-border-default;
+}
+
+.b-person-cart__border-bottom{
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: @color-border-default;
 }
 
 /*aside*/
 .b-person-cart__aside{
-  position: absolute;
-  left: 0;
-  top: 0;
+  //position: absolute;
+  float: left;
+  width: 348px;
+  z-index: 2;
+}
+
+.b-person-cart__aside_background{
   width: 348px;
   height: 100%;
   background-color: @color-background-info;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 
 .b-person-cart__aside-inner{
   padding: 32px;
   background-color: @color-background-info;
+  position: relative;
+  z-index: 2;
 }
 
 .b-person-cart__person-pic{
@@ -36,11 +57,17 @@
 .b-person-cart__star{
   .border-box();
   width: 20%;
-  height: 20px;
+  height: 26px;
   padding: 0 4px;
   float: left;
+  cursor: pointer;
   &:first-child{
     margin-left: 0;
+  }
+  .b-icon-star{
+    fill: @color-accent;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -52,10 +79,34 @@
 
 .b-person-cart-gifts-item{
   margin-bottom: 20px;
+  position: relative;
+  padding-left: 45px;
+  min-height: 30px;
+  padding-top: 6px;
   &:last-child{
     margin-bottom: 0;
   }
 }
+
+.b-person-cart-gifts-item__icon-tick{
+  display: inline-block;
+  border: 1px solid #fff;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  line-height: 33px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  .b-icon-tick{
+    display: inline-block;
+    width: 20px;
+    height: 17px;
+    fill: #fff;
+  }
+}
+
+
 
 .b-person-cart-gifts-item__text{
   font-family: @type-default;
@@ -82,17 +133,16 @@
 
 /*content*/
 .b-person-cart__content{
+  overflow: hidden;
   margin-left: 348px;
   padding-bottom: 30px;
   border-top: 1px solid @color-border-default;
-  border-right: 1px solid @color-border-default;
-  border-bottom: 1px solid @color-border-default;
 }
 
 /*person-header*/
 .b-person-cart__person-header{
   text-align: center;
-  padding: 25px 0;
+  padding: 22px 0 20px;
   border-bottom: 1px solid @color-border-default;
 }
 
@@ -100,7 +150,7 @@
   font-family: @type-default;
   font-size: 24px;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
@@ -112,6 +162,21 @@
 
 /*Cart info*/
 .b-person-cart__info{
+  border-bottom: 1px solid @color-border-default;
+  position: relative;
+  &:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: @color-border-default;
+    left: 40%;
+    top: 0;
+  }
+}
+
+.b-person-cart__info-inner{
   .clearfix();
 }
 
@@ -122,14 +187,14 @@
 .b-person-cart__price{
   .border-box();
   float: left;
-  padding: 25px 60px 20px 58px;
+  padding: 25px 60px 24px 58px;
 }
 
 .b-person-cart__location{
   width: 40%;
-  border-right: 1px solid @color-border-default;
-
 }
+
+
 
 .b-person-cart__price{
   width: 60%;
@@ -208,8 +273,9 @@
 }
 
 .b-person-cart-reviews__comment{
-  font-size: 18px;
-  font-family: "Arial Narrow", Arial, sans-serif; /*test*/
+  font-size: 16px;
+  font-family: @type-default;
+  line-height: 1.3em;
 }
 
 .b-person-cart-reviews__person-name{
@@ -234,18 +300,55 @@
 
 .b-person-cart-reviews__comment-more{
   text-align: right;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 /*b-person-cart-slider-works*/
 
 .b-person-cart-slider-works{
+  margin-top: 30px;
+  padding-left: 58px;
+  padding-right: 60px;
   img{
     width: 100%;
     height: auto;
   }
   .slick-slide{
     padding: 0 10px;
+  }
+  .slick-arrow{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    margin-top: -16px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    &:hover{
+      .b-icon-arrow-prev,
+      .b-icon-arrow-next{
+        fill: @color-accent;
+      }
+    }
+    svg{
+      display: block;
+      width: 19px;
+      height: 32px;
+    }
+  }
+  .slick-prev{
+    left: 20px;
+    .b-icon-arrow-prev{
+      fill: #828282;
+    }
+
+  }
+  .slick-next{
+    right: 20px;
+    .b-icon-arrow-next{
+      fill: #828282;
+    }
   }
 }
 
@@ -257,7 +360,7 @@
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .b-type-default(){

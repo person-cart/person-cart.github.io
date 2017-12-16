@@ -2,7 +2,6 @@
   "name": "Person_Cart",
   "version": "1.0.0",
   "description": "Person_Cart",
-
   "devDependencies": {
     "grunt": "^0.4",
     "grunt-autoprefixer": "~3.0.0",
@@ -24,10 +23,10 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-postcss": "^0.8.0",
     "grunt-preprocess": "~5.0",
+    "grunt-svg2string": "^0.2.1",
     "jit-grunt": "^0.10.0"
-
   },
-  "dependencies":{
+  "dependencies": {
     "selectize": "0.12.4",
     "slick-carousel": "1.8.1"
   }

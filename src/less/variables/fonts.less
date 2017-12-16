@@ -1,0 +1,16 @@
+.font(@family: arial, @file: arial, @weight: normal, @style: normal, @svgID: icon){
+  @font-face{
+    font-family: @family;
+    src: url('@{file}.eot');
+    src: url('@{file}.eot?#iefix') format('embedded-opentype'),
+    url('@{file}.woff2') format('woff2'),
+    url('@{file}.woff') format('woff'),
+    url('@{file}.ttf') format('truetype'),
+    url('@{file}.svg#@{svgID}') format('svg');
+    font-weight: @weight;
+    font-style: @style;
+  }
+}
+
+/*custom fonts*/
+//.font('name', '../fonts/name', normal, normal, 'name');
