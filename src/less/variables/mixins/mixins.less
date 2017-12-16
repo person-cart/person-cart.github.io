@@ -24,3 +24,19 @@
   box-sizing: @boxmodel;
 }
 
+.placeholder-color(@argument){
+  ::-webkit-input-placeholder {
+    color: @argument;
+  }
+  ::-moz-placeholder {
+    color: @argument;
+  }
+  :-ms-input-placeholder {
+    color: @argument;
+  }
+  :-moz-placeholder {
+    color: @argument;
+  }
+}
+
+

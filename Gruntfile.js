@@ -58,7 +58,7 @@ module.exports = function(grunt) {
                         dot: true,
                         cwd: 'src',
                         src: ['fonts/*.*'],
-                        dest: 'web/dist'
+                        dest: 'dist'
                     }
                 ]
             }
@@ -109,12 +109,12 @@ module.exports = function(grunt) {
 
         preprocess: {
             'vendor': {
-                src: 'app/js/vendor.js',
-                dest: 'web/dist/js/vendor.js'
+                src: 'src/js/vendor.js',
+                dest: 'dist/js/vendor.js'
             },
             'theme': {
-                src: 'app/js/theme.js',
-                dest: 'web/dist/js/theme.js'
+                src: 'src/js/theme.js',
+                dest: 'dist/js/theme.js'
             }
         },
 
@@ -129,8 +129,8 @@ module.exports = function(grunt) {
         },
 
         build: {
-            watch: ['clean:before', /*'lesshint',*/ /*'preprocess',*/ 'less', /*'copy',*/ 'group_css_media_queries', 'css_clean', 'css_purge',  'cssmin', 'clean:after'],
-            dist: ['clean:before', /*'lesshint',*/ /*'preprocess',*/ 'less', /*'copy',*/ 'group_css_media_queries', 'css_clean', 'css_purge', 'cssmin', 'clean:after']
+            watch: ['clean:before', /*'lesshint',*/ 'preprocess', 'less', /*'copy',*/ 'group_css_media_queries', 'css_clean', 'css_purge',  'cssmin', 'clean:after'],
+            dist: ['clean:before', /*'lesshint',*/ 'preprocess', 'less', /*'copy',*/ 'group_css_media_queries', 'css_clean', 'css_purge', 'cssmin', 'clean:after']
         }
     });
 

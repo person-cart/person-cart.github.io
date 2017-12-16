@@ -1,6 +1,6 @@
 .b-person-cart{
   position: relative;
-  max-width: 1260px;
+  max-width: 100%;
 }
 
 /*aside*/
@@ -10,12 +10,12 @@
   top: 0;
   width: 348px;
   height: 100%;
-  background-color: @color-background-aside;
+  background-color: @color-background-info;
 }
 
 .b-person-cart__aside-inner{
   padding: 32px;
-  background-color: @color-background-aside;
+  background-color: @color-background-info;
 }
 
 .b-person-cart__person-pic{
@@ -38,7 +38,6 @@
   width: 20%;
   height: 20px;
   padding: 0 4px;
-  background-color: gray;
   float: left;
   &:first-child{
     margin-left: 0;
@@ -136,12 +135,50 @@
   width: 60%;
 }
 
+/*Cart location*/
+
+.b-person-cart__location-item{
+  margin-bottom: 15px;
+  line-height: 1.5em;
+}
+
+.b-person-cart__location-text{
+  .b-type-default();
+}
+
+.b-person-cart__location-title{
+  margin-right: 10px;
+}
+
+.b-person-cart__location-mark{
+  border-radius: 100%;
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+}
+
+.b-person-cart__location-mark_green{
+  background-color: @color-mark-green;
+}
+.b-person-cart__location-mark_red{
+  background-color: @color-mark-red;
+}
+
+.b-person-cart__location-departure{
+  margin-bottom: 25px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+
 
 /*Cart price*/
 
 .b-person-cart-table-price{
   width: 100%;
   margin-bottom: 15px;
+  line-height: 1.5em;
 }
 
 
@@ -158,9 +195,21 @@
   padding-right: 60px;
 }
 
+.b-person-cart-reviews__header{
+  position: relative;
+}
+
+.b-person-cart-reviews__date{
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #8c8c8c;
+  font-family: @type-default;
+}
+
 .b-person-cart-reviews__comment{
   font-size: 18px;
-  font-family: "Arial Narrow", Arial, sans-serif;
+  font-family: "Arial Narrow", Arial, sans-serif; /*test*/
 }
 
 .b-person-cart-reviews__person-name{
@@ -188,6 +237,18 @@
   margin-top: 25px;
 }
 
+/*b-person-cart-slider-works*/
+
+.b-person-cart-slider-works{
+  img{
+    width: 100%;
+    height: auto;
+  }
+  .slick-slide{
+    padding: 0 10px;
+  }
+}
+
 
 /*text*/
 .b-person-cart__sub-title{
@@ -204,6 +265,11 @@
   color: @color-type-default;
   font-size: 18px;
 }
+
+.b-person-cart__text_bold{
+  font-weight: bold;
+}
+
 
 
 

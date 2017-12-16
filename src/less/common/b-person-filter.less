@@ -1,0 +1,44 @@
+.b-person-filter{
+  margin-bottom: 10px;
+  background-color: @color-background-info;
+  padding: 50px 45px;
+}
+
+.b-form-person-filter__item{
+  .border-box();
+  float: left;
+  padding: 0 14px;
+}
+
+.b-form-person-filter__item-column-3{
+  width: 33.3333%;
+}
+
+
+.b-form-person__select{
+  font-family: @type-default;
+  border: none;
+  .selectize-input{
+    border-radius: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    input{
+      font-size: 24px;
+      color: @color-type-default;
+      display: block !important;
+      margin: 0 auto !important;
+
+    }
+  }
+  .selectize-dropdown{
+    border: none;
+    border-radius: 0;
+  }
+  .selectize-dropdown .optgroup-header,
+  .selectize-dropdown [data-selectable]{
+    padding: 0 25px;
+
+  }
+  .placeholder-color(@color-type-default);
+}
