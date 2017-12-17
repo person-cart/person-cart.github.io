@@ -1,25 +1,26 @@
-.b-v-align{
-  display: table;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
+.b-person-popup-show{
+  overflow: hidden;
+  .b-person-popup{
+    display: block;
+  }
 }
-
-.b-v-align__table-cell{
-  display: table-cell;
-  vertical-align: middle;
-}
-
 
 .b-person-popup{
+  .border-box();
   width: 100%;
   height: 100%;
   position: fixed;
+  overflow-y: scroll;
   top: 0;
   left: 0;
   z-index:  1000;
   background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  min-width: 320px;
+  display: none;
 }
+
+
 
 .b-person-popup__title{
   font-size: 24px;
@@ -28,21 +29,79 @@
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 50px;
+  text-align: center;
+  @media screen {
+    @media (max-width: @screen-sm-max){
+      font-size: 20px;
+    }
+    @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
+      margin-bottom: 35px;
+    }
+    @media (max-width: @screen-xs-max){
+      margin-bottom: 20px;
+      padding: 0 25px;
+    }
+  }
 }
 
-.b-person-popup__content{
+.b-person-popup__dialog{
+  position: relative;
   margin: 0 auto;
   background-color: #fff;
   max-width: 760px;
-  padding: 50px 130px;
+  padding: 50px;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
   .border-box();
+  @media screen {
+    @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
+      max-width: 640px;
+      padding: 30px;
+    }
+    @media (max-width: @screen-xs-max) {
+      max-width: 560px;
+      padding: 20px 15px;
+    }
+  }
+}
+.b-person-popup__button_close{
+  position: absolute;
+  display: block;
+  right: 15px;
+  top: 15px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover{
+    .b-icon-close{
+      fill: @color-accent;
+    }
+  }
+  .b-icon-close{
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: #828282;;
+  }
+}
+
+
+.b-person-popup__content{
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .b-person-popup-form__group{
   margin-bottom: 30px;
+  @media screen {
+    @media (max-width: @screen-xs-max){
+      margin-bottom:  20px;
+    }
+  }
   &:last-child{
     margin-bottom: 0;
   }
@@ -56,6 +115,14 @@
   font-size: 20px;
   width: 100%;
   font-family: @type-default;
+  @media screen {
+    @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
+      font-size: 18px;
+    }
+    @media (max-width: @screen-xs-max){
+      font-size: 16px;
+    }
+  }
 }
 
 .b-person-popup-form__input_text{
@@ -63,7 +130,6 @@
   border-right: 0;
   border-left: 0;
   border-bottom: 1px solid @color-input-border-default;
-  font-size: 20px;
   text-transform: uppercase;
   width: 100%;
   padding: 3px 0;
@@ -83,16 +149,41 @@
   .border-box();
   padding: 0 10px;
   float: left;
+  @media screen {
+    @media (max-width: @screen-xs-max){
+      float: none;
+      width:  100%;
+      margin-bottom: 20px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .b-person-popup-form__item:first-child{
   width: 12%;
+  @media screen {
+    @media (max-width: @screen-xs-max){
+      width:  100%;
+    }
+  }
 }
 .b-person-popup-form__item:nth-child(2){
   width: 16%;
+  @media screen {
+    @media (max-width: @screen-xs-max){
+      width:  100%;
+    }
+  }
 }
 .b-person-popup-form__item:nth-child(3){
   width: 72%;
+  @media screen {
+    @media (max-width: @screen-xs-max){
+      width:  100%;
+    }
+  }
 }
 
 .b-person-popup-form__input_phone{
@@ -104,21 +195,63 @@
   min-height: 164px;
   padding: 10px;
   font-size: 16px;
+  @media screen {
+    @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
+      min-height: 120px;
+    }
+    @media (max-width: @screen-xs-max){
+      min-height: 100px;
+    }
+  }
   &::-webkit-input-placeholder {
     color: #a0a0a0;
     font-size: 16px;
+    @media screen {
+      @media screen {
+        @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
+          font-size: 14px;
+        }
+        @media (max-width: @screen-xs-max){
+          font-size: 12px;
+        }
+      }
+    }
   }
   &::-moz-placeholder {
     color: #a0a0a0;
     font-size: 16px;
+    @media screen {
+      @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
+        font-size: 14px;
+      }
+      @media (max-width: @screen-xs-max){
+        font-size: 12px;
+      }
+    }
   }
   &:-ms-input-placeholder {
     color: #a0a0a0;
     font-size: 16px;
+    @media screen {
+      @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
+        font-size: 14px;
+      }
+      @media (max-width: @screen-xs-max){
+        font-size: 12px;
+      }
+    }
   }
   &:-moz-placeholder {
     color: #a0a0a0;
     font-size: 16px;
+    @media screen {
+      @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
+        font-size: 14px;
+      }
+      @media (max-width: @screen-xs-max){
+        font-size: 12px;
+      }
+    }
   }
 }
 
@@ -128,12 +261,32 @@
   color: #7c7c7c;
   font-family: @type-default;
   line-height: 1.5em;
+  @media screen {
+    @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
+      font-size: 15px;
+    }
+    @media (max-width: @screen-xs-max){
+      font-size: 14px;
+    }
+  }
+}
+
+.b-person-popup-form__info{
+  margin-top: 10px;
 }
 
 .b-person-popup-form__notice{
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.b-person-popup-form__group-submit{
+  margin-top: 30px;
+  @media screen {
+    @media (max-width: @screen-xs-max) {
+      margin-top: 20px;
+    }
+  }
 }
 
 .b-person-popup-form__button_submit{
@@ -142,13 +295,33 @@
   font-size: 20px;
   color: #fff;
   text-transform: uppercase;
-  width: 200px;
+  min-width: 200px;
   font-family: @type-default;
   border-radius: 7px;
-  padding: 16px;
+  padding: 17px 16px 15px;
   margin: 0 auto;
   display: block;
   cursor: pointer;
+  @media screen {
+    @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
+      font-size: 18px;
+      min-width:  180px;
+      padding: 14px 14px 13px;
+    }
+    @media (max-width: @screen-xs-max) {
+      font-size: 15px;
+      min-width:  100%;
+      padding: 12px 10px 10px;
+    }
+  }
+}
+
+.b-person-popup-form__error{
+  color: #be0000;
+  font-family: @type-default;
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 

@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Person-Cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="dist/css/style.css">
-
+    <!--todo delete-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
     <!--todo delete-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="dist/css/style.css">
 
     <script type="text/javascript" src="dist/js/vendor.js" ></script>
     <script type="text/javascript" src="dist/js/theme.js" ></script>
@@ -19,42 +21,50 @@
     <div class="b-person-popup">
         <div class="b-v-align">
             <div class="b-v-align__table-cell">
-                <div class="b-person-popup__content">
-                    <div class="b-person-popup__title">Как репетитору связаться с вами ?</div>
-                    <from class="b-person-popup-form-feedback">
-                        <div class="b-person-popup-form__group">
-                            <input class="b-person-popup-form__input_text" placeholder="имя" type="text">
-                        </div>
-                        <div class="b-person-popup-form__group">
-                            <div class="b-person-popup-form__list">
-                                <div class="b-person-popup-form__item">
-                                    <input class="b-person-popup-form__input_phone" type="text">
+                <div class="b-person-popup__dialog" data-popup="dialog">
+                    <button class="b-person-popup__button_close" data-popup="hide">
+                        <svg class="b-icon-close" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="#close"></use>
+                        </svg>
+                    </button>
+                    <div class="b-person-popup__content">
+                        <div class="b-person-popup__title">Как репетитору связаться&nbsp;с&nbsp;вами&nbsp;?</div>
+                        <from class="b-person-popup-form-feedback">
+                            <div class="b-person-popup-form__group">
+                                <input class="b-person-popup-form__input_text" placeholder="имя" type="text">
+                            </div>
+                            <div class="b-person-popup-form__group">
+                                <div class="b-person-popup-form__list">
+                                    <div class="b-person-popup-form__item">
+                                        <input class="b-person-popup-form__input_phone" placeholder="+38" type="text">
+                                    </div>
+                                    <div class="b-person-popup-form__item">
+                                        <input class="b-person-popup-form__input_phone" placeholder="000" type="text">
+                                    </div>
+                                    <div class="b-person-popup-form__item">
+                                        <input class="b-person-popup-form__input_phone" placeholder="0000000" type="text">
+                                    </div>
                                 </div>
-                                <div class="b-person-popup-form__item">
-                                    <input class="b-person-popup-form__input_phone" type="text">
-                                </div>
-                                <div class="b-person-popup-form__item">
-                                    <input class="b-person-popup-form__input_phone" type="text">
+                                <div class="b-person-popup-form__error">
+                                     Проверте номер телефона. Вы&nbsp;допустили&nbsp;ошибку
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="b-person-popup-form__group">
-                            <textarea class="b-person-popup-form__teaxtarea" placeholder="Коментарий (необязательно)" name="" id="" ></textarea>
-                        </div>
-                        <div class="b-person-popup-form__notice">
-                            Мы перезвоним вам в течении часа
-                        </div>
-                        <div class="b-person-popup-form__info">
-                            Услуги по подбору репетитора предоставляет сервис Repetior.net
-                            Нажимая кнопку "Отправить", я соглашаюсь с тем, что мои данные будут переданы сервису
-                            Repetior.net для дальнейшей обработчки
-                        </div>
-                        <div class="b-person-popup-form__group-submit">
-                            <button class="b-person-popup-form__button_submit">Отправить</button>
-                        </div>
-
-                    </from>
+                            <div>
+                                <textarea class="b-person-popup-form__teaxtarea" placeholder="Коментарий (необязательно)" name="" id="" ></textarea>
+                            </div>
+                            <div class="b-person-popup-form__group b-person-popup-form__info">
+                                <div class="b-person-popup-form__notice">
+                                    Мы перезвоним вам в течении часа
+                                </div>
+                                Услуги по подбору репетитора предоставляет сервис Repetior.net
+                                Нажимая кнопку "Отправить", я соглашаюсь с тем, что мои данные будут переданы сервису
+                                Repetior.net для дальнейшей обработчки
+                            </div>
+                            <div class="b-person-popup-form__group-submit">
+                                <button class="b-person-popup-form__button_submit">Отправить</button>
+                            </div>
+                        </from>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,109 +74,124 @@
 
 
     <div class="b-person-list">
-        <div class="b-person-filter">
-            <form action="" class="b-form-person-filter">
-                <div class="b-form-person-filter__group">
-                    <div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">
-                        <select id="test1" data-filter-select placeholder="Город">
-                            <option value=""></option>
-                            <option value="Москва">Москва</option>
-                            <option value="Киев">Киев</option>
-                            <option value="Берлин">Берлин</option>
-                            <option value="Лондон">Лондон</option>
-                        </select>
-                    </div>
-                    <div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">
-                        <select name="" id="test2" data-filter-select placeholder="Предмет">
-                            <option value=""></option>
-                            <option value="Физика">Физика</option>
-                            <option value="Математика">Математика</option>
-                            <option value="Язык">Язык</option>
-                            <option value="Литература">Литература</option>
-                        </select>
-                    </div>
-                    <div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">
-                        <select name="" id="test13" data-filter-select placeholder="Метро">
-                            <option value=""></option>
-                            <option value="м.Горьковская">dddsм.Горьковская</option>
-                            <option value="м.Академгородок">м.Академгородок</option>
-                            <option value="м.Святошин">м.Святошин</option>
-                            <option value="м.Вокзальная">м.Вокзальная</option>
-                        </select>
-                    </div>
-                </div>
+        <!--<div class="b-person-filter">-->
+            <!--<form action="" class="b-form-person-filter">-->
+                <!--<div class="b-form-person-filter__group">-->
+                    <!--<div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">-->
+                        <!--<select id="test1" data-filter-select placeholder="Город">-->
+                            <!--<option value=""></option>-->
+                            <!--<option value="Москва">Москва</option>-->
+                            <!--<option value="Киев">Киев</option>-->
+                            <!--<option value="Берлин">Берлин</option>-->
+                            <!--<option value="Лондон">Лондон</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">-->
+                        <!--<select name="" id="test2" data-filter-select placeholder="Предмет">-->
+                            <!--<option value=""></option>-->
+                            <!--<option value="Физика">Физика</option>-->
+                            <!--<option value="Математика">Математика</option>-->
+                            <!--<option value="Язык">Язык</option>-->
+                            <!--<option value="Литература">Литература</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">-->
+                        <!--<select name="" id="test13" data-filter-select placeholder="Метро">-->
+                            <!--<option value=""></option>-->
+                            <!--<option value="м.Горьковская">dddsм.Горьковская</option>-->
+                            <!--<option value="м.Академгородок">м.Академгородок</option>-->
+                            <!--<option value="м.Святошин">м.Святошин</option>-->
+                            <!--<option value="м.Вокзальная">м.Вокзальная</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                <!--</div>-->
 
-            </form>
-        </div>
+            <!--</form>-->
+        <!--</div>-->
         <!--Person-Cart-->
         <div class="b-person-cart">
+            <div class="b-person-cart__person-header b-person-cart__person-header_visible_in_mobile">
+                <div class="b-person-cart__person-name">
+                    <a class="b-person-cart__link" href="">
+                        <span class="b-person-cart__link-underline">Смирнова Екатерина Дмитрована</span>
+                    </a>
+                </div>
+                <div class="b-person-cart__person-post">Частный преподователь</div>
+            </div>
             <div class="b-person-cart__aside">
                 <div class="b-person-cart__aside-inner">
-                    <div class="b-person-cart__person-pic">
-                        <img src="src/img/author.jpg" alt="author">
+                    <div class="b-person-cart__aside-item">
+                        <div class="b-person-cart__person-pic-wrapper">
+                            <div class="b-person-cart__person-pic">
+                                <img src="src/img/author.jpg" alt="author">
+                            </div>
+                            <div class="b-person-cart__rating">
+                                <div class="b-person-cart__star">
+                                    <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                </div>
+                                <div class="b-person-cart__star">
+                                    <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                </div>
+                                <div class="b-person-cart__star">
+                                    <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                </div>
+                                <div class="b-person-cart__star">
+                                    <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                </div>
+                                <div class="b-person-cart__star">
+                                    <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b-person-cart__gifts">
+                            <ul class="b-person-cart__gifts-list">
+                                <li class="b-person-cart-gifts-item">
+                                    <i class="b-person-cart-gifts-item__icon-tick">
+                                        <svg class="b-icon-tick" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="#tick"></use>
+                                        </svg>
+                                    </i><span class="b-person-cart-gifts-item__text">Преподает более 7 лет</span>
+                                </li>
+                                <li class="b-person-cart-gifts-item">
+                                    <i class="b-person-cart-gifts-item__icon-tick">
+                                        <svg class="b-icon-tick" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="#tick"></use>
+                                        </svg>
+                                    </i><span class="b-person-cart-gifts-item__text">Обратилось 49 учеников</span>
+                                </li>
+                                <li class="b-person-cart-gifts-item">
+                                    <i class="b-person-cart-gifts-item__icon-tick">
+                                        <svg class="b-icon-tick" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="#tick"></use>
+                                        </svg>
+                                    </i><span class="b-person-cart-gifts-item__text">Сотрудничаем с мая 2012</span>
+                                <li class="b-person-cart-gifts-item">
+                                    <i class="b-person-cart-gifts-item__icon-tick">
+                                        <svg class="b-icon-tick" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="#tick"></use>
+                                        </svg>
+                                    </i><span class="b-person-cart-gifts-item__text">Документы проверены</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="b-person-cart__rating">
-                        <div class="b-person-cart__star">
-                            <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="#star"></use>
-                            </svg>
-                        </div>
-                        <div class="b-person-cart__star">
-                            <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="#star"></use>
-                            </svg>
-                        </div>
-                        <div class="b-person-cart__star">
-                            <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="#star"></use>
-                            </svg>
-                        </div>
-                        <div class="b-person-cart__star">
-                            <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="#star"></use>
-                            </svg>
-                        </div>
-                        <div class="b-person-cart__star">
-                            <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="#star"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <ul class="b-person-cart__gifts-list">
-                        <li class="b-person-cart-gifts-item">
-                            <i class="b-person-cart-gifts-item__icon-tick">
-                                <svg class="b-icon-tick" xmlns="http://www.w3.org/2000/svg">
-                                    <use xlink:href="#tick"></use>
-                                </svg>
-                            </i><span class="b-person-cart-gifts-item__text">Преподает более 7 лет</span>
-                        </li>
-                        <li class="b-person-cart-gifts-item">
-                            <i class="b-person-cart-gifts-item__icon-tick">
-                                <svg class="b-icon-tick" xmlns="http://www.w3.org/2000/svg">
-                                    <use xlink:href="#tick"></use>
-                                </svg>
-                            </i><span class="b-person-cart-gifts-item__text">Обратилось 49 учеников</span>
-                        </li>
-                        <li class="b-person-cart-gifts-item">
-                            <i class="b-person-cart-gifts-item__icon-tick">
-                                <svg class="b-icon-tick" xmlns="http://www.w3.org/2000/svg">
-                                    <use xlink:href="#tick"></use>
-                                </svg>
-                            </i><span class="b-person-cart-gifts-item__text">Сотрудничаем с мая 2012</span>
-                        <li class="b-person-cart-gifts-item">
-                            <i class="b-person-cart-gifts-item__icon-tick">
-                                <svg class="b-icon-tick" xmlns="http://www.w3.org/2000/svg">
-                                    <use xlink:href="#tick"></use>
-                                </svg>
-                            </i><span class="b-person-cart-gifts-item__text">Документы проверены</span>
-                        </li>
-                    </ul>
-                    <button class="b-person-cart__button-join">Связаться</button>
+
+                    <button class="b-person-cart__button-join" data-popup="show">Связаться</button>
                 </div>
                 <div class="b-person-cart__aside_background"></div>
             </div>
             <div class="b-person-cart__content">
-                <div class="b-person-cart__person-header">
+                <div class="b-person-cart__person-header b-person-cart__person-header_hidden_in_mobile">
                     <div class="b-person-cart__person-name">
                         <a class="b-person-cart__link" href="">
                             <span class="b-person-cart__link-underline">Смирнова Екатерина Дмитрована</span>
@@ -176,59 +201,61 @@
                 </div>
                 <div class="b-person-cart__info">
                     <div class="b-person-cart__info-inner">
-                        <div class="b-person-cart__location">
-                            <div class="b-person-cart__sub-title">Расположение</div>
-                            <div class="b-person-cart__location-item">
-                                <div class="b-person-cart__location-area">
-                                    <div class="b-person-cart__location-text">
-                                        <span class="b-person-cart__location-title b-person-cart__text_bold">Район:</span><span class="b-person-cart__location-mark b-person-cart__location-mark_red"></span>
-                                        м. Горьковская.
-                                    </div>
-                                </div>
-                                <div class="b-person-cart__location-departure">
-                                    <div class="b-person-cart__location-text">
-                                        <span class="b-person-cart__location-title b-person-cart__text_bold">Выезд:</span><br>
-                                        Автозаводский р-н,<br><span class="b-person-cart__location-mark b-person-cart__location-mark_green"></span> м.&nbspГорьковская.
-                                    </div>
-                                </div>
-                                <div class="b-person-cart__location-departure">
-                                    <div class="b-person-cart__location-text">
-                                        Автозаводский
-                                        р-н,<br><span class="b-person-cart__location-mark b-person-cart__location-mark_green"></span> м. Горьковская.
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="" class="b-person-cart__more b-person-cart__link">
-                                <span class="b-person-cart__link-underline">Другие районы</span> (6)
-                            </a>
-                        </div>
                         <div class="b-person-cart__price b-person-cart__border-right">
                             <div class="b-person-cart__sub-title">Предметы и цены</div>
                             <table class="b-person-cart-table-price">
                                 <tr>
                                     <td><div class="b-person-cart-table-price__desc">Английский язык</div></td>
-                                    <td><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
+                                    <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
                                 </tr>
                                 <tr>
                                     <td><div class="b-person-cart-table-price__desc">Немецкий язык</div></td>
-                                    <td><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
+                                    <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
                                 </tr>
                                 <tr>
                                     <td><div class="b-person-cart-table-price__desc">Французкий язык</div></td>
-                                    <td><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
+                                    <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
                                 </tr>
                                 <tr>
                                     <td><div class="b-person-cart-table-price__desc">Китайский язык</div></td>
-                                    <td><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
+                                    <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
                                 </tr>
                                 <tr>
                                     <td><div class="b-person-cart-table-price__desc">Высшая математика язык</div></td>
-                                    <td><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
+                                    <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
                                 </tr>
                             </table>
                             <a href="" class="b-person-cart__more b-person-cart__link">
                                 <span class="b-person-cart__link-underline">Остальные преметы</span> (6)
                             </a>
+                        </div>
+                        <div class="b-person-cart__location">
+                            <div class="b-person-cart__location_border_top_mobile">
+                                <div class="b-person-cart__sub-title">Расположение</div>
+                                <div class="b-person-cart__location-item">
+                                    <div class="b-person-cart__location-area">
+                                        <div class="b-person-cart__location-text">
+                                            <span class="b-person-cart__location-title b-person-cart__text_bold">Район:</span><span class="b-person-cart__location-mark b-person-cart__location-mark_red"></span>
+                                            м. Горьковская.
+                                        </div>
+                                    </div>
+                                    <div class="b-person-cart__location-departure">
+                                        <div class="b-person-cart__location-text">
+                                            <span class="b-person-cart__location-title b-person-cart__text_bold">Выезд:</span><br>
+                                            Автозаводский р-н, <span class="b-person-cart__location-mark b-person-cart__location-mark_green"></span> м.&nbspГорьковская.
+                                        </div>
+                                    </div>
+                                    <div class="b-person-cart__location-departure">
+                                        <div class="b-person-cart__location-text">
+                                            Автозаводский
+                                            р-н, <span class="b-person-cart__location-mark b-person-cart__location-mark_green"></span>&nbsp;м.&nbsp;Горьковская.
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="" class="b-person-cart__more b-person-cart__link">
+                                    <span class="b-person-cart__link-underline">Другие районы</span> (6)
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -257,6 +284,7 @@
                     </div>
                 </div>
                 <div class="b-person-cart-slider-works" data-person-cart-slider>
+
                     <div class="">
                         <img src="src/img/preview.jpg" alt="">
                     </div>
@@ -311,6 +339,27 @@
         document.querySelector('[data-role="svg-placeholder"]').innerHTML = SVG_ICON_SET;
     </script>
     <!-- end SVG sprite include -->
+
+    <script type="text/javascript">
+        ((function ($) {
+            $(function(){
+                var buttonShow = $('[data-popup="show"]'),
+                    buttonHide = $('[data-popup="hide"]'),
+                    body = $('body');
+
+                buttonShow.bind('click', showPopup);
+                buttonHide.bind('click', hidePopup);
+
+                function showPopup() {
+                    body.addClass('b-person-popup-show');
+                }
+                function hidePopup() {
+                    body.removeClass('b-person-popup-show');
+                }
+            })
+        })(jQuery));
+
+    </script>
 
 </body>
 </html>

@@ -33,7 +33,21 @@
             '<svg class="b-icon-arrow-next" xmlns="http://www.w3.org/2000/svg">' +
                 '<use xlink:href="#arrow-next"></use>' +
             '</svg>' +
-            '</button>'
+            '</button>',
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 5
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }
+            ]
         });
     })
 })(jQuery));
