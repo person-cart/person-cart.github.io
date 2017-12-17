@@ -20,15 +20,15 @@
   border: none;
   .selectize-input{
     border-radius: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 25px;
     border: none;
     input{
       font-size: 24px;
       color: @color-type-default;
-      display: block !important;
-      margin: 0 auto !important;
-
+    }
+    .item{
+      font-size: 24px;
+      padding: 5px 0;
     }
   }
   .selectize-dropdown{
@@ -37,8 +37,18 @@
   }
   .selectize-dropdown .optgroup-header,
   .selectize-dropdown [data-selectable]{
-    padding: 0 25px;
+    padding: 17px 25px 0 17px;
 
+    font-size: 18px;
+    span{
+      display: block;
+      border-bottom: 1px solid @color-border-default;
+      padding-bottom: 17px;
+    }
+
+  }
+  .selectize-dropdown-content{
+    max-height: 400px;
   }
   .placeholder-color(@color-type-default);
 }
