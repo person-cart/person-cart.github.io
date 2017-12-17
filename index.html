@@ -74,40 +74,40 @@
 
 
     <div class="b-person-list">
-        <!--<div class="b-person-filter">-->
-            <!--<form action="" class="b-form-person-filter">-->
-                <!--<div class="b-form-person-filter__group">-->
-                    <!--<div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">-->
-                        <!--<select id="test1" data-filter-select placeholder="Город">-->
-                            <!--<option value=""></option>-->
-                            <!--<option value="Москва">Москва</option>-->
-                            <!--<option value="Киев">Киев</option>-->
-                            <!--<option value="Берлин">Берлин</option>-->
-                            <!--<option value="Лондон">Лондон</option>-->
-                        <!--</select>-->
-                    <!--</div>-->
-                    <!--<div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">-->
-                        <!--<select name="" id="test2" data-filter-select placeholder="Предмет">-->
-                            <!--<option value=""></option>-->
-                            <!--<option value="Физика">Физика</option>-->
-                            <!--<option value="Математика">Математика</option>-->
-                            <!--<option value="Язык">Язык</option>-->
-                            <!--<option value="Литература">Литература</option>-->
-                        <!--</select>-->
-                    <!--</div>-->
-                    <!--<div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">-->
-                        <!--<select name="" id="test13" data-filter-select placeholder="Метро">-->
-                            <!--<option value=""></option>-->
-                            <!--<option value="м.Горьковская">dddsм.Горьковская</option>-->
-                            <!--<option value="м.Академгородок">м.Академгородок</option>-->
-                            <!--<option value="м.Святошин">м.Святошин</option>-->
-                            <!--<option value="м.Вокзальная">м.Вокзальная</option>-->
-                        <!--</select>-->
-                    <!--</div>-->
-                <!--</div>-->
+        <div class="b-person-filter">
+            <form action="" class="b-form-person-filter">
+                <div class="b-form-person-filter__group">
+                    <div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">
+                        <select id="test1" data-filter-select="default" placeholder="Город">
+                            <option value=""></option>
+                            <option value="Москва">Москва</option>
+                            <option value="Киев">Киев</option>
+                            <option value="Берлин">Берлин</option>
+                            <option value="Лондон">Лондон</option>
+                        </select>
+                    </div>
+                    <div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">
+                        <select name="" id="test2" data-filter-select="default" placeholder="Предмет">
+                            <option value=""></option>
+                            <option value="Физика">Физика</option>
+                            <option value="Математика">Математика</option>
+                            <option value="Язык">Язык</option>
+                            <option value="Литература">Литература</option>
+                        </select>
+                    </div>
+                    <div class="b-form-person-filter__item b-form-person__select b-form-person-filter__item-column-3">
+                        <select name="" id="test13" data-filter-select="location" placeholder="Метро">
+                            <option value=""></option>
+                            <option value="м.Горьковская">Горьковская</option>
+                            <option value="м.Академгородок">м.Академгородок</option>
+                            <option value="м.Святошин">м.Святошин</option>
+                            <option value="м.Вокзальная">м.Вокзальная</option>
+                        </select>
+                    </div>
+                </div>
 
-            <!--</form>-->
-        <!--</div>-->
+            </form>
+        </div>
         <!--Person-Cart-->
         <div class="b-person-cart">
             <div class="b-person-cart__person-header b-person-cart__person-header_visible_in_mobile">
@@ -126,29 +126,44 @@
                                 <img src="src/img/author.jpg" alt="author">
                             </div>
                             <div class="b-person-cart__rating">
-                                <div class="b-person-cart__star">
+                                <div class="b-person-cart__star b-person-cart__star_select">
                                     <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg class="b-icon-star-pick" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star-pick"></use>
+                                    </svg>
+                                </div>
+                                <div class="b-person-cart__star b-person-cart__star_select">
+                                    <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg class="b-icon-star-pick" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star-pick"></use>
+                                    </svg>
+                                </div>
+                                <div class="b-person-cart__star b-person-cart__star_select">
+                                    <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg class="b-icon-star-pick" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star-pick"></use>
                                     </svg>
                                 </div>
                                 <div class="b-person-cart__star">
                                     <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="#star"></use>
                                     </svg>
-                                </div>
-                                <div class="b-person-cart__star">
-                                    <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#star"></use>
+                                    <svg class="b-icon-star-pick" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star-pick"></use>
                                     </svg>
                                 </div>
                                 <div class="b-person-cart__star">
                                     <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="#star"></use>
                                     </svg>
-                                </div>
-                                <div class="b-person-cart__star">
-                                    <svg class="b-icon-star" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#star"></use>
+                                    <svg class="b-icon-star-pick" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#star-pick"></use>
                                     </svg>
                                 </div>
                             </div>
@@ -242,7 +257,7 @@
                                     <div class="b-person-cart__location-departure">
                                         <div class="b-person-cart__location-text">
                                             <span class="b-person-cart__location-title b-person-cart__text_bold">Выезд:</span><br>
-                                            Автозаводский р-н, <span class="b-person-cart__location-mark b-person-cart__location-mark_green"></span> м.&nbspГорьковская.
+                                            Автозаводский р-н, <span class="b-person-cart__location-mark b-person-cart__location-mark_green"></span> м.&nbsp;Горьковская.
                                         </div>
                                     </div>
                                     <div class="b-person-cart__location-departure">
@@ -325,9 +340,7 @@
                 <div class="b-person-cart__border-bottom"></div>
             </div>
         </div>
-
         <!--Person-Cart-->
-
     </div>
 
     <!-- SVG sprite include -->

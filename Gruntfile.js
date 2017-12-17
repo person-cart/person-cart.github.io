@@ -10,34 +10,19 @@ module.exports = function(grunt) {
             after: ['tmp']
         },
 
-        //TODO @see https://github.com/lesshint/lesshint/blob/master/lib/linters/README.md
-        //TODO Use .lesshintrc file for options
-        // lesshint: {
-        //     options: {
-        //         lesshintrc: true
-        //     },
-        //     'theme': {
-        //         src: 'src/**/*.less',
-        //     }
-        // },
-
-
 
         less: {
             'theme': {
                 src: 'src/less/style.less',
                 dest: 'dist/css/style.css'
             }
-            // 'theme-fonts': {
-            //     src: 'app/style/less/fonts.less',
-            //     dest: 'web/dist/css/fonts.css'
-            // }
+
         },
 
         svg2string: {
             elements: {
                 options: {
-                    //wrapLines: false
+                    wrapLines: false
                 },
                 files: {
                     'dist/js/set-icons.js': [
@@ -71,10 +56,6 @@ module.exports = function(grunt) {
                 src: 'dist/css/style.css',
                 dest: 'dist/css/style.css'
             }
-            // 'theme-fonts': {
-            //     src: 'web/dist/css/fonts.css',
-            //     dest: 'web/dist/css/fonts.css'
-            // }
         },
 
         css_purge: {
@@ -126,8 +107,8 @@ module.exports = function(grunt) {
         },
 
         build: {
-            watch: ['clean:before', /*'lesshint',*/  'preprocess', 'less', 'copy', 'group_css_media_queries', 'css_clean', 'css_purge',  'cssmin', 'clean:after'],
-            dist: ['clean:before', /*'lesshint',*/ 'svg2string',  'preprocess', 'less', 'copy', 'group_css_media_queries', 'css_clean', 'css_purge', 'cssmin', 'clean:after']
+            watch: ['clean:before', 'preprocess', 'less', 'copy', 'group_css_media_queries', 'css_clean', 'css_purge',  'cssmin', 'clean:after'],
+            dist: ['clean:before', 'svg2string',  'preprocess', 'less', 'copy', 'group_css_media_queries', 'css_clean', 'css_purge', 'cssmin', 'clean:after']
         }
     });
 
@@ -138,11 +119,3 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['build:dist']);
 };
-
-
-// gulp.task('default', function () {
-//     return gulp.src('src/**/*.svg')
-//         .pipe(svgstore({ inlineSvg: true }))
-//         .pipe(svg2string())
-//         .pipe(gulp.dest('dest'));
-// });
