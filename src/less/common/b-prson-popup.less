@@ -26,7 +26,7 @@
   color: @color-type-default;
   text-transform: uppercase;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   text-align: center;
   @media screen {
     @media (max-width: @screen-sm-max){
@@ -46,7 +46,7 @@
   position: relative;
   margin: 0 auto;
   background-color: #fff;
-  max-width: 760px;
+  max-width: 600px;
   padding: 50px;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
@@ -106,17 +106,21 @@
   }
 }
 
+.b-person-popup-form__input-container{
+  position: relative;
+}
+
 .b-person-popup-form__input_phone,
 .b-person-popup-form__input_text,
 .b-person-popup-form__teaxtarea{
   .border-box();
-  color: @color-input-border-default;
-  font-size: 20px;
+  color: @color-type-default;
+  font-size: 18px;
   width: 100%;
   font-family: @type-default;
   @media screen {
     @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
-      font-size: 18px;
+      font-size: 16px;
     }
     @media (max-width: @screen-xs-max){
       font-size: 16px;
@@ -125,69 +129,105 @@
 }
 
 .b-person-popup-form__input_text{
-  border-top: none;
-  border-right: 0;
-  border-left: 0;
-  border-bottom: 1px solid @color-input-border-default;
+  //border-top: none;
+  //border-right: 0;
+  //border-left: 0;
+  //border-bottom: 1px solid @color-input-border-default;
   text-transform: uppercase;
-  width: 100%;
-  padding: 3px 0;
+  //width: 100%;
+  //padding: 3px 0;
 }
 
-.b-person-popup-form__input_phone{
+.b-person-popup-form__input_phone,
+.b-person-popup-form__input_text{
   border: 1px solid @color-input-border-default;
-  padding: 4px 3px 2px;
+  padding: 4px 3px 2px 80px;
+  height: 48px;
 }
 
-.b-person-popup-form__list{
-  .clearfix();
-  margin: 0 -10px;
+.b-person-popup-form__icon-person,
+.b-person-popup-form__icon-phone{
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  margin-top: -15px;
+  display: block;
+  width: 36px;
+  height: 30px;
+  line-height: 28px;
+  border-right: 1px solid @color-input-border-default;
 }
 
-.b-person-popup-form__item{
-  .border-box();
-  padding: 0 10px;
-  float: left;
-  @media screen {
-    @media (max-width: @screen-xs-max){
-      float: none;
-      width:  100%;
-      margin-bottom: 20px;
-      &:last-child{
-        margin-bottom: 0;
-      }
-    }
+.b-person-popup-form__icon-person{
+  .b-icon-person{
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 23px;
+    fill: #4c4c4c;
   }
 }
 
-.b-person-popup-form__item:first-child{
-  width: 12%;
-  @media screen {
-    @media (max-width: @screen-xs-max){
-      width:  100%;
-    }
-  }
-}
-.b-person-popup-form__item:nth-child(2){
-  width: 16%;
-  @media screen {
-    @media (max-width: @screen-xs-max){
-      width:  100%;
-    }
-  }
-}
-.b-person-popup-form__item:nth-child(3){
-  width: 72%;
-  @media screen {
-    @media (max-width: @screen-xs-max){
-      width:  100%;
-    }
+.b-person-popup-form__icon-phone{
+  .b-icon-phone{
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    fill: #4c4c4c;
   }
 }
 
-.b-person-popup-form__input_phone{
-  text-align: center;
-}
+
+//.b-person-popup-form__list{
+//  .clearfix();
+//  margin: 0 -10px;
+//}
+//
+//.b-person-popup-form__item{
+//  .border-box();
+//  padding: 0 10px;
+//  float: left;
+//  @media screen {
+//    @media (max-width: @screen-xs-max){
+//      float: none;
+//      width:  100%;
+//      margin-bottom: 20px;
+//      &:last-child{
+//        margin-bottom: 0;
+//      }
+//    }
+//  }
+//}
+//
+//.b-person-popup-form__item:first-child{
+//  width: 12%;
+//  @media screen {
+//    @media (max-width: @screen-xs-max){
+//      width:  100%;
+//    }
+//  }
+//}
+//.b-person-popup-form__item:nth-child(2){
+//  width: 16%;
+//  @media screen {
+//    @media (max-width: @screen-xs-max){
+//      width:  100%;
+//    }
+//  }
+//}
+//.b-person-popup-form__item:nth-child(3){
+//  width: 72%;
+//  @media screen {
+//    @media (max-width: @screen-xs-max){
+//      width:  100%;
+//    }
+//  }
+//}
+
+//.b-person-popup-form__input_phone{
+//  text-align: center;
+//}
 
 .b-person-popup-form__teaxtarea{
   resize: vertical;
