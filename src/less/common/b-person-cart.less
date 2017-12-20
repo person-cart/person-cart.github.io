@@ -404,7 +404,6 @@
 .b-person-cart__location,
 .b-person-cart__price{
   .border-box();
-  float: left;
   padding: 25px 6.4% 24px 6.4%; //padding: 25px 60px 24px 60px
   @media screen {
     @media (max-width: @screen-md-max){
@@ -418,7 +417,9 @@
   }
 }
 
-.b-person-cart__location{
+
+.b-person-cart__location_left{
+  float: left;
   width: 40%;
   position: relative;
   left: -60%;
@@ -442,6 +443,10 @@
 }
 
 .b-person-cart__price{
+
+}
+
+.b-person-cart__price_right{
   width: 60%;
   position: relative;
   left: 40%;

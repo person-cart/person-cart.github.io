@@ -17,10 +17,10 @@
 
         $('[data-filter-select="location"]').selectize({
             options: [
-                {station: 'м. Горьковская', color: 'red'},
-                {station: 'м. Академгородок', color: 'green'},
-                {station: 'м. Святошин', color: 'green'},
-                {station: 'м. Вокзальная', color: 'red'}
+                {id: 1, station: 'м. Горьковская', color: 'red'},
+                {id: 2, station: 'м. Академгородок', color: 'green'},
+                {id: 3, station: 'м. Святошин', color: 'green'},
+                {id: 4, station: 'м. Вокзальная', color: 'red'}
             ],
             render: {
                 option: function(item, escape) {
@@ -32,8 +32,13 @@
                         (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
                         '</div></div>';
                 }
+            },
+
+            onChange: function(value) {
+                alert(value);
             }
         });
+
     })
 })(jQuery));
 
