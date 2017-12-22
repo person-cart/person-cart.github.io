@@ -1,5 +1,6 @@
 ((function ($) {
     $(function(){
+
         $('[data-filter-select="default"]').selectize({
             valueField: 'id',
             labelField: 'name',
@@ -15,7 +16,15 @@
             }
         });
 
-        $('[data-filter-select="location"]').selectize({
+        var textHandler = function(name) {
+            return function() {
+                if(name == 'focus'){
+                    jQuery("#test3 + .selectize-control").find("input:text").prop({"placeholder": ""});
+                }
+            };
+        };
+
+        var selectLocation = $('[data-filter-select="location"]').selectize({
             options: [
                 {id: 1, station: 'м. Горьковская', color: 'red'},
                 {id: 2, station: 'м. Академгородок', color: 'green'},
@@ -35,9 +44,13 @@
             },
 
             onChange: function(value) {
-                alert(value);
-            }
+            },
+
+            onFocus: textHandler('focus')
         });
+
+
+
 
     })
 })(jQuery));
