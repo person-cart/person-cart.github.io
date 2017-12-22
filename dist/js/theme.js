@@ -1,10 +1,11 @@
 ((function ($) {
     $(function(){
 
-        $('[data-filter-select="default"]').selectize({
+        var basicSelectize = $('[data-filter-select="default"]').selectize({
             valueField: 'id',
             labelField: 'name',
             searchField: ['name'],
+            placeholder: 'sss',
             render: {
                 option: function(item, escape) {
                     var label = item.name;
@@ -14,6 +15,11 @@
                         '</div>';
                 }
             }
+        });
+
+        basicSelectize.on('click', function() {
+            basicSelectize.val('');
+            console.log('1');
         });
 
         var textHandler = function(name) {

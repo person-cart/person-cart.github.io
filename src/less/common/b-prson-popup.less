@@ -1,5 +1,5 @@
 .b-person-popup-show{
-  overflow: scroll;
+  overflow: hidden;
   .b-person-popup{
     display: block;
   }
@@ -22,8 +22,8 @@
 
 .b-person-popup__title{
   font-size: 24px;
-  font-family: @type-default;
-  color: @color-type-default;
+  //font-family: @type-default;
+  //color: @color-type-default;
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 35px;
@@ -76,14 +76,14 @@
   cursor: pointer;
   &:hover{
     .b-icon-close{
-      fill: @color-accent;
+      //fill: @color-accent;
     }
   }
   .b-icon-close{
     display: block;
     width: 100%;
     height: 100%;
-    fill: #828282;
+    //fill: #828282;
     .transition(fill @transition-default);
   }
 }
@@ -114,10 +114,10 @@
 .b-person-popup-form__input_text,
 .b-person-popup-form__teaxtarea{
   .border-box();
-  color: @color-type-default;
+  //color: @color-type-default;
   font-size: 18px;
   width: 100%;
-  font-family: @type-default;
+  //font-family: @type-default;
   @media screen {
     @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
       font-size: 16px;
@@ -326,8 +326,8 @@
 .b-person-popup-form__notice,
 .b-person-popup-form__info{
   font-size: 16px;
-  color: #7c7c7c;
-  font-family: @type-default;
+  //color: #7c7c7c;
+  //font-family: @type-default;
   line-height: 1.5em;
   @media screen {
     @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
@@ -358,13 +358,13 @@
 }
 
 .b-person-popup-form__button_submit{
-  background-color: @color-background-accent;
+  //background-color: @color-background-accent;
   border: none;
   font-size: 20px;
-  color: #fff;
+  //color: #fff;
   text-transform: uppercase;
   min-width: 200px;
-  font-family: @type-default;
+  //font-family: @type-default;
   border-radius: 7px;
   padding: 17px 16px 15px;
   margin: 0 auto;
@@ -385,8 +385,8 @@
 }
 
 .b-person-popup-form__error{
-  color: #be0000;
-  font-family: @type-default;
+  //color: #be0000;
+  //font-family: @type-default;
   font-size: 12px;
   margin-top: 10px;
   text-align: center;
