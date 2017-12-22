@@ -34,6 +34,7 @@
 .b-form-person__select{
   //font-family: @type-default;
   border: none;
+  //.placeholder-color(@color-type-default);
   .selectize-input{
     .border-box();
     border-radius: 0;
@@ -49,6 +50,7 @@
       font-size: 24px;
       //color: @color-type-default;
       min-width: 100px;
+
       @media screen {
         @media (max-width: @screen-sm-max) {
           font-size: 18px;
@@ -107,7 +109,22 @@
   .selectize-dropdown-content{
     max-height: 400px;
   }
-  .placeholder-color(@color-type-default);
+
+  .selectize-input.dropdown-active{
+    ::-webkit-input-placeholder {
+      opacity: 0;
+    }
+    ::-moz-placeholder {
+      opacity: 0;
+    }
+    :-ms-input-placeholder {
+      opacity: 0;
+    }
+    :-moz-placeholder {
+      opacity: 0;
+    }
+  }
+
 
   .selectize-control.single .selectize-input:after{
     content: "";
