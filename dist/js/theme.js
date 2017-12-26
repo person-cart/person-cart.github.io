@@ -48,7 +48,7 @@
         });
 
         var selectLocation = $('[data-filter-select="location"]').selectize({
-            placeholder: 'Метро',
+            placeholder: 'Район/Метро',
             options: [
                 {value: 1, station: 'м. Горьковская', color: 'red'},
                 {value: 2, station: 'м. Академгородок', color: 'green'},
