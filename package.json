@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "selectize": "0.12.4",
-    "slick-carousel": "1.8.1"
+    "slick-carousel": "1.8.1",
+    "slick-lightbox": "^0.2.10"
   }
 }

@@ -628,6 +628,12 @@
   .border-box();
   width: 50%;
   float: left;
+  @media screen {
+    @media (max-width: @screen-xs) {
+      width: 100%;
+      float: none;
+    }
+  }
 }
 
 .b-person-cart__location-item_inline{
@@ -819,6 +825,7 @@
   img{
     width: 100%;
     height: auto;
+    cursor: pointer;
   }
   .slick-slide{
     padding: 0 10px;
@@ -870,6 +877,8 @@
     }
   }
 }
+
+
 
 .b-person-cart__text_bold{
   font-weight: bold;

@@ -1,0 +1,88 @@
+/*lightbox*/
+.slick-lightbox{
+  .slick-arrow{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    margin-top: -16px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    &:hover{
+      .b-icon-arrow-prev,
+      .b-icon-arrow-next{
+        fill: @color-accent;
+      }
+    }
+    svg{
+      display: block;
+      width: 40px;
+      height: 40px;
+      @media screen {
+        @media (max-width: @screen-xs-max){
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+  .slick-prev{
+    left: 15px;
+    @media screen {
+      @media (max-width: @screen-xs-max){
+        left: 10px;
+      }
+    }
+    .b-icon-arrow-prev{
+      fill: #fff;
+      .transition(fill @transition-default);
+    }
+
+  }
+  .slick-next{
+    right: 15px;
+    @media screen {
+      @media (max-width: @screen-xs-max){
+        right: 10px;
+      }
+    }
+    .b-icon-arrow-next{
+      fill: #fff;
+      .transition(fill @transition-default);
+    }
+  }
+  .slick-lightbox-close{
+    top: 15px;
+    right: 15px;
+    height: 25px;
+    width: 25px;
+    @media screen {
+      @media (max-width: @screen-xs-max){
+        height: 20px;
+        width: 20px;
+        right: 10px;
+      }
+    }
+    &:hover{
+      .b-icon-close{
+        fill: @color-accent;
+      }
+    }
+    &:before{
+      content: none;
+    }
+    .b-icon-close{
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+      .transition(fill @transition-default);
+    }
+  }
+  .slick-lightbox-slick-item{
+    .border-box();
+    padding: 0 15px;
+  }
+}
+/**/

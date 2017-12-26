@@ -1,7 +1,14 @@
 .b-person-popup-show{
-  overflow: hidden;
+  //overflow: hidden;
   .b-person-popup{
-    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.b-person-popup-hide{
+  .b-person-popup{
+    opacity: 0;
   }
 }
 
@@ -10,14 +17,16 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  overflow-y: scroll;
+  //overflow-y: scroll;
   top: 0;
   left: 0;
   z-index:  1000;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 15px;
   min-width: 320px;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  .transition(opacity 0.5s);
 }
 
 .b-person-popup__title{
@@ -29,15 +38,13 @@
   margin-bottom: 35px;
   text-align: center;
   @media screen {
-    @media (max-width: @screen-sm-max){
-      font-size: 20px;
-    }
     @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min) {
       margin-bottom: 35px;
+      font-size: 20px;
     }
     @media (max-width: @screen-xs-max){
       margin-bottom: 20px;
-      padding: 0 25px;
+      font-size: 18px;
     }
   }
 }
@@ -59,7 +66,7 @@
     }
     @media (max-width: @screen-xs-max) {
       max-width: 480px;
-      padding: 20px 30px;
+      padding: 20px 15px;
     }
   }
 }

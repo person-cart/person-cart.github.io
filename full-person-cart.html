@@ -239,7 +239,7 @@
                     </button>
                     <div class="b-person-popup__content">
                         <div class="b-person-popup__title">Как репетитору связаться&nbsp;с&nbsp;вами&nbsp;?</div>
-                        <from class="b-person-popup-form-feedback">
+                        <from class="b-person-popup-form-feedback" id="registration">
                             <div class="b-person-popup-form__group">
                                 <div class="b-person-popup-form__input-container">
                                     <i class="b-person-popup-form__icon-person">
@@ -275,7 +275,7 @@
                                 Repetior.net для дальнейшей обработчки
                             </div>
                             <div class="b-person-popup-form__group-submit">
-                                <button class="b-person-popup-form__button_submit">Отправить</button>
+                                <button id="submit" class="b-person-popup-form__button_submit">Отправить</button>
                             </div>
                         </from>
                     </div>
@@ -468,42 +468,14 @@
                         </div>
                     </div>
                     <div class="b-person-cart-slider-works" data-person-cart-slider>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
-                        <div class="">
-                            <img src="src/img/preview.jpg" alt="">
-                        </div>
+                        <img src="src/img/preview-1.jpg" alt="">
+                        <img src="src/img/preview-1.jpg" alt="">
+                        <img src="src/img/preview-1.jpg" alt="">
+                        <img src="src/img/preview-1.jpg" alt="">
+                        <img src="src/img/preview-1.jpg" alt="">
+                        <img src="src/img/preview-1.jpg" alt="">
+                        <img src="src/img/preview-1.jpg" alt="">
+                        <img src="src/img/preview-1.jpg" alt="">
                     </div>
                     <div class="b-person-cart__border-bottom b-person-cart__border-bottom_hidden_mobile"></div>
                 </div>
@@ -514,24 +486,24 @@
                         <div class="b-person-cart__sub-title">Предметы и цены</div>
                         <table class="b-person-cart-table-price">
                             <tr>
-                                <td><div class="b-person-cart-table-price__desc">Английский язык</div></td>
-                                <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
+                                <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__desc">Английский язык</div></td>
+                                <td><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
                             </tr>
                             <tr>
-                                <td><div class="b-person-cart-table-price__desc">Немецкий язык</div></td>
-                                <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
+                                <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__desc">Немецкий язык</div></td>
+                                <td><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
                             </tr>
                             <tr>
-                                <td><div class="b-person-cart-table-price__desc">Французкий язык</div></td>
-                                <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
+                                <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__desc">Французкий язык</div></td>
+                                <td><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
                             </tr>
                             <tr>
-                                <td><div class="b-person-cart-table-price__desc">Китайский язык</div></td>
-                                <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
+                                <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__desc">Китайский язык</div></td>
+                                <td><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
                             </tr>
                             <tr>
-                                <td><div class="b-person-cart-table-price__desc">Высшая математика язык</div></td>
-                                <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
+                                <td class="b-person-cart-table-price__value-td"><div class="b-person-cart-table-price__desc">Высшая математика язык</div></td>
+                                <td><div class="b-person-cart-table-price__value">От 1000 р / 60 мин</div></td>
                             </tr>
                         </table>
                     </div>
@@ -602,12 +574,37 @@
                 buttonShow.bind('click', showPopup);
                 buttonHide.bind('click', hidePopup);
 
-                function showPopup() {
+                function showPopup(e) {
+                    e.stopPropagation();
+
                     body.addClass('b-person-popup-show');
+
+                    $(document).bind('click.hidePopup', function(e) {
+                        if ($(event.target).closest('[data-popup="dialog"]').length) return;
+                        hidePopup(e);
+                        e.stopPropagation();
+                    });
+                    $(document).bind('keydown.hidePopup', function(e) {
+                        if(e.keyCode === 27){
+                            hidePopup(e);
+                        }
+                        e.stopPropagation();
+                    });
                 }
-                function hidePopup() {
-                    body.removeClass('b-person-popup-show');
+
+                function hidePopup(e) {
+                    e.stopPropagation();
+
+                    body.addClass('b-person-popup-hide');
+                    setTimeout(function () {
+                        body.removeClass('b-person-popup-hide');
+                        body.removeClass('b-person-popup-show');
+                        $(document).unbind('click.hidePopup');
+                        $(document).unbind('keydown.hidePopup');
+                    }, 500);
+
                 }
+
             })
         })(jQuery));
 
