@@ -64,126 +64,89 @@ CustomValidation.prototype = {
         this.inputNode.addEventListener('keyup', function() {
             CustomValidation.checkInput();
         });
-
-
     }
-
 };
 
 
+((function ($) {
+    $(function(){
 
-/* ----------------------------
- Validity Checks
- The arrays of validity checks for each input
- Comprised of three things
- 1. isInvalid() - the function to determine if the input fulfills a particular requirement
- 2. invalidityMessage - the error message to display if the field is invalid
- 3. element - The element that states the requirement
- ---------------------------- */
+        /* ----------------------------
+         Validity Checks
+         The arrays of validity checks for each input
+         Comprised of three things
+         1. isInvalid() - the function to determine if the input fulfills a particular requirement
+         2. invalidityMessage - the error message to display if the field is invalid
+         3. element - The element that states the requirement
+         ---------------------------- */
 
-var usernameValidityChecks = [
-    {
-        isInvalid: function(input) {
-            return input.value.length < 3;
-        },
-        invalidityMessage: 'This input needs to be at least 3 characters',
-        element: document.querySelector('label[for="username"] .input-requirements li:nth-child(1)')
-    },
-    {
-        isInvalid: function(input) {
-            var illegalCharacters = input.value.match(/[^a-zA-Z0-9]/g);
-            return illegalCharacters ? true : false;
-        },
-        invalidityMessage: 'Only letters and numbers are allowed',
-        element: document.querySelector('label[for="username"] .input-requirements li:nth-child(2)')
-    }
-];
+        var personNameContainer = document.querySelector('#person-name-container .b-person-popup-form__error-requirements');
 
-var passwordValidityChecks = [
-    {
-        isInvalid: function(input) {
-            return input.value.length < 8 | input.value.length > 100;
-        },
-        invalidityMessage: 'This input needs to be between 8 and 100 characters',
-        element: document.querySelector('label[for="password"] .input-requirements li:nth-child(1)')
-    },
-    {
-        isInvalid: function(input) {
-            return !input.value.match(/[0-9]/g);
-        },
-        invalidityMessage: 'At least 1 number is required',
-        element: document.querySelector('label[for="password"] .input-requirements li:nth-child(2)')
-    },
-    {
-        isInvalid: function(input) {
-            return !input.value.match(/[a-z]/g);
-        },
-        invalidityMessage: 'At least 1 lowercase letter is required',
-        element: document.querySelector('label[for="password"] .input-requirements li:nth-child(3)')
-    },
-    {
-        isInvalid: function(input) {
-            return !input.value.match(/[A-Z]/g);
-        },
-        invalidityMessage: 'At least 1 uppercase letter is required',
-        element: document.querySelector('label[for="password"] .input-requirements li:nth-child(4)')
-    },
-    {
-        isInvalid: function(input) {
-            return !input.value.match(/[\!\@\#\$\%\^\&\*]/g);
-        },
-        invalidityMessage: 'You need one of the required special characters',
-        element: document.querySelector('label[for="password"] .input-requirements li:nth-child(5)')
-    }
-];
+        var usernameValidityChecks = [
+            {
+                isInvalid: function(input) {
+                    return input.value.length < 3;
+                },
+                invalidityMessage: 'Имя должно содержать не менее 3 символов',
+                element: personNameContainer.querySelector('li:nth-child(1)')
+            },
+            {
+                isInvalid: function(input) {
+                    return !input.value.match(/^[A-Za-z0-9]+$/);
 
-var passwordRepeatValidityChecks = [
-    {
-        isInvalid: function() {
-            return passwordRepeatInput.value != passwordInput.value;
-        },
-        invalidityMessage: 'This password needs to match the first one'
-    }
-];
+                },
+                invalidityMessage: 'Имя может сожержать только латинские буквы и цифры',
+                element: personNameContainer.querySelector('li:nth-child(2)')
+            }
+        ];
 
 
-/* ----------------------------
- Setup CustomValidation
- Setup the CustomValidation prototype for each input
- Also sets which array of validity checks to use for that input
- ---------------------------- */
-
-var usernameInput = document.getElementById('username');
-var passwordInput = document.getElementById('password');
-var passwordRepeatInput = document.getElementById('password_repeat');
-
-usernameInput.CustomValidation = new CustomValidation(usernameInput);
-usernameInput.CustomValidation.validityChecks = usernameValidityChecks;
-
-passwordInput.CustomValidation = new CustomValidation(passwordInput);
-passwordInput.CustomValidation.validityChecks = passwordValidityChecks;
-
-passwordRepeatInput.CustomValidation = new CustomValidation(passwordRepeatInput);
-passwordRepeatInput.CustomValidation.validityChecks = passwordRepeatValidityChecks;
+        var userPhoneValidityChecks = [
+            {
+                isInvalid: function(input) {
+                    return !input.value.match(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/);
+                },
+                invalidityMessage: 'Введите правильный формат напрмер 8 (926) 123-45-67',
+                element: document.querySelector('#person-phone-container .b-person-popup-form__error-requirements li:nth-child(1)')
+            }
+        ];
 
 
+        /* ----------------------------
+         Setup CustomValidation
+         Setup the CustomValidation prototype for each input
+         Also sets which array of validity checks to use for that input
+         ---------------------------- */
+
+        var usernameInput = document.getElementById('person-name');
+        usernameInput.CustomValidation = new CustomValidation(usernameInput);
+        usernameInput.CustomValidation.validityChecks = usernameValidityChecks;
+
+        var userPhoneInput = document.getElementById('person-phone');
+
+        userPhoneInput.CustomValidation = new CustomValidation(userPhoneInput);
+        userPhoneInput.CustomValidation.validityChecks = userPhoneValidityChecks;
+
+        /* ----------------------------
+         Event Listeners
+         ---------------------------- */
+
+        var submit = document.querySelector('#person-submit');
+        var form = document.getElementById('person-feedback');
+
+        var inputs = form.querySelectorAll('input:not([type="submit"])');
+
+        function validate() {
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].CustomValidation.checkInput();
+            }
+
+        }
+
+        submit.addEventListener('click', validate);
+        form.addEventListener('submit', validate);
+
+    })
+})(jQuery));
 
 
-/* ----------------------------
- Event Listeners
- ---------------------------- */
-
-var inputs = document.querySelectorAll('input:not([type="submit"])');
-
-
-var submit = document.querySelector('input[type="submit"');
-var form = document.getElementById('registration');
-
-function validate() {
-    for (var i = 0; i < inputs.length; i++) {
-        inputs[i].CustomValidation.checkInput();
-    }
-}
-
-submit.addEventListener('click', validate);
-form.addEventListener('submit', validate);

@@ -22,9 +22,11 @@
         }
 
         .b-person-cart__star .b-icon-star,
-        .b-person-cart__star .b-icon-star-pick{
+        .b-person-cart__star .b-icon-star,
+        .b-person-cart__star .b-icon-star-pick {
             fill: #ff7800;
         }
+
 
         .b-person-cart-gifts-item__icon-tick{
             border-color: #fff;
@@ -202,17 +204,26 @@
             font-family: 'Arial', sans-serif;
         }
 
-        .b-form-person__select ::-webkit-input-placeholder {
+        .b-form-person__select::-webkit-input-placeholder {
             color: #242424;
         }
-        .b-form-person__select ::-moz-placeholder {
+        .b-form-person__select::-moz-placeholder {
             color: #242424;
         }
-        .b-form-person__select :-ms-input-placeholder {
+        .b-form-person__select:-ms-input-placeholder {
             color: #242424;
         }
-        .b-form-person__select :-moz-placeholder {
+        .b-form-person__select:-moz-placeholder {
             color: #242424;
+        }
+
+        .slick-lightbox .slick-arrow:hover .b-icon-arrow-prev,
+        .slick-lightbox .slick-arrow:hover .b-icon-arrow-next{
+            fill: #ff7800;
+        }
+
+        .slick-lightbox .slick-lightbox-close:hover .b-icon-close{
+            fill: #ff7800;
         }
 
         @media screen and (max-width: 767px){
@@ -227,63 +238,69 @@
 
 </head>
 <body>
-
     <div class="b-person-popup">
-        <div class="b-v-align">
-            <div class="b-v-align__table-cell">
-                <div class="b-person-popup__dialog" data-popup="dialog">
-                    <button class="b-person-popup__button_close" data-popup="hide">
-                        <svg class="b-icon-close" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="#close"></use>
-                        </svg>
-                    </button>
-                    <div class="b-person-popup__content">
-                        <div class="b-person-popup__title">Как репетитору связаться&nbsp;с&nbsp;вами&nbsp;?</div>
-                        <from class="b-person-popup-form-feedback">
-                            <div class="b-person-popup-form__group">
-                                <div class="b-person-popup-form__input-container">
-                                    <i class="b-person-popup-form__icon-person">
-                                        <svg class="b-icon-person" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="#person"></use>
-                                        </svg>
-                                    </i>
-                                    <input class="b-person-popup-form__input_text" placeholder="введите свое имя" type="text">
-                                </div>
+    <div class="b-v-align">
+        <div class="b-v-align__table-cell">
+            <div class="b-person-popup__dialog" data-popup="dialog">
+                <button class="b-person-popup__button_close" data-popup="hide">
+                    <svg class="b-icon-close" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <div class="b-person-popup__content">
+                    <div class="b-person-popup__title">Как репетитору связаться&nbsp;с&nbsp;вами&nbsp;?</div>
+                    <form class="b-person-popup-form-feedback" id="person-feedback">
+                        <div class="b-person-popup-form__group" id="person-name-container">
+                            <div class="b-person-popup-form__input-container">
+                                <i class="b-person-popup-form__icon-person">
+                                    <svg class="b-icon-person" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#person"></use>
+                                    </svg>
+                                </i>
+                                <input type="text" id="person-name" class="b-person-popup-form__input_text"  placeholder="имя">
                             </div>
-                            <div class="b-person-popup-form__group">
-                                <div class="b-person-popup-form__input-container">
-                                    <i class="b-person-popup-form__icon-phone">
-                                        <svg class="b-icon-phone" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="#phone"></use>
-                                        </svg>
-                                    </i>
-                                    <input class="b-person-popup-form__input_text" placeholder="+38 (067) 37-79-236" type="text">
-                                </div>
-                                <div class="b-person-popup-form__error">
-                                     Проверте номер телефона. Вы&nbsp;допустили&nbsp;ошибку
-                                </div>
+                            <div class="b-person-popup-form__error">
+                                <ul class="b-person-popup-form__error-requirements">
+                                    <li>Имя должно содержать не менее 3 символов</li>
+                                    <li>Имя может сожержать только латинские буквы и цифры</li>
+                                </ul>
                             </div>
-                            <div>
-                                <textarea class="b-person-popup-form__teaxtarea" placeholder="Коментарий (необязательно)" name="" id="" ></textarea>
+                        </div>
+                        <div class="b-person-popup-form__group" id="person-phone-container">
+                            <div class="b-person-popup-form__input-container">
+                                <i class="b-person-popup-form__icon-phone">
+                                    <svg class="b-icon-phone" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="#phone"></use>
+                                    </svg>
+                                </i>
+                                <input type="text" id="person-phone" class="b-person-popup-form__input_text" placeholder="телефон">
                             </div>
-                            <div class="b-person-popup-form__group b-person-popup-form__info">
-                                <div class="b-person-popup-form__notice">
-                                    Мы перезвоним вам в течении часа
-                                </div>
-                                Услуги по подбору репетитора предоставляет сервис Repetior.net
-                                Нажимая кнопку "Отправить", я соглашаюсь с тем, что мои данные будут переданы сервису
-                                Repetior.net для дальнейшей обработчки
+                            <div class="b-person-popup-form__error">
+                                <ul class="b-person-popup-form__error-requirements">
+                                    <li>Введите правильный формат напрмер 8 (926) 123-45-67</li>
+                                </ul>
                             </div>
-                            <div class="b-person-popup-form__group-submit">
-                                <button class="b-person-popup-form__button_submit">Отправить</button>
+                        </div>
+                        <div>
+                            <textarea class="b-person-popup-form__teaxtarea" placeholder="Коментарий (необязательно)" name="" id="" ></textarea>
+                        </div>
+                        <div class="b-person-popup-form__group b-person-popup-form__info">
+                            <div class="b-person-popup-form__notice">
+                                Мы перезвоним вам в течении часа
                             </div>
-                        </from>
-                    </div>
+                            Услуги по подбору репетитора предоставляет сервис Repetior.net
+                            Нажимая кнопку "Отправить", я соглашаюсь с тем, что мои данные будут переданы сервису
+                            Repetior.net для дальнейшей обработчки
+                        </div>
+                        <div class="b-person-popup-form__group-submit">
+                            <button id="person-submit" class="b-person-popup-form__button_submit">Отправить</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
     </div>
+</div>
 
     <div class="b-person-list" style="margin: 0 auto"> <!--todo style delete-->
         <div class="b-person-filter">

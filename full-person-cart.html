@@ -22,9 +22,11 @@
         }
 
         .b-person-cart__star .b-icon-star,
-        .b-person-cart__star .b-icon-star-pick{
+        .b-person-cart__star .b-icon-star,
+        .b-person-cart__star .b-icon-star-pick {
             fill: #ff7800;
         }
+
 
         .b-person-cart-gifts-item__icon-tick{
             border-color: #fff;
@@ -202,17 +204,26 @@
             font-family: 'Arial', sans-serif;
         }
 
-        .b-form-person__select ::-webkit-input-placeholder {
+        .b-form-person__select::-webkit-input-placeholder {
             color: #242424;
         }
-        .b-form-person__select ::-moz-placeholder {
+        .b-form-person__select::-moz-placeholder {
             color: #242424;
         }
-        .b-form-person__select :-ms-input-placeholder {
+        .b-form-person__select:-ms-input-placeholder {
             color: #242424;
         }
-        .b-form-person__select :-moz-placeholder {
+        .b-form-person__select:-moz-placeholder {
             color: #242424;
+        }
+
+        .slick-lightbox .slick-arrow:hover .b-icon-arrow-prev,
+        .slick-lightbox .slick-arrow:hover .b-icon-arrow-next{
+            fill: #ff7800;
+        }
+
+        .slick-lightbox .slick-lightbox-close:hover .b-icon-close{
+            fill: #ff7800;
         }
 
         @media screen and (max-width: 767px){
@@ -239,28 +250,36 @@
                     </button>
                     <div class="b-person-popup__content">
                         <div class="b-person-popup__title">Как репетитору связаться&nbsp;с&nbsp;вами&nbsp;?</div>
-                        <from class="b-person-popup-form-feedback" id="registration">
-                            <div class="b-person-popup-form__group">
+                        <form class="b-person-popup-form-feedback" id="person-feedback">
+                            <div class="b-person-popup-form__group" id="person-name-container">
                                 <div class="b-person-popup-form__input-container">
                                     <i class="b-person-popup-form__icon-person">
                                         <svg class="b-icon-person" xmlns="http://www.w3.org/2000/svg">
                                             <use xlink:href="#person"></use>
                                         </svg>
                                     </i>
-                                    <input class="b-person-popup-form__input_text" placeholder="имя" type="text">
+                                    <input type="text" id="person-name" class="b-person-popup-form__input_text"  placeholder="имя">
+                                </div>
+                                <div class="b-person-popup-form__error">
+                                    <ul class="b-person-popup-form__error-requirements">
+                                        <li>Имя должно содержать не менее 3 символов</li>
+                                        <li>Имя может сожержать только латинские буквы и цифры</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="b-person-popup-form__group">
+                            <div class="b-person-popup-form__group" id="person-phone-container">
                                 <div class="b-person-popup-form__input-container">
                                     <i class="b-person-popup-form__icon-phone">
                                         <svg class="b-icon-phone" xmlns="http://www.w3.org/2000/svg">
                                             <use xlink:href="#phone"></use>
                                         </svg>
                                     </i>
-                                    <input class="b-person-popup-form__input_text" placeholder="0000000" type="text">
+                                    <input type="text" id="person-phone" class="b-person-popup-form__input_text" placeholder="телефон">
                                 </div>
                                 <div class="b-person-popup-form__error">
-                                     Проверте номер телефона. Вы&nbsp;допустили&nbsp;ошибку
+                                    <ul class="b-person-popup-form__error-requirements">
+                                        <li>Введите правильный формат напрмер 8 (926) 123-45-67</li>
+                                    </ul>
                                 </div>
                             </div>
                             <div>
@@ -275,14 +294,13 @@
                                 Repetior.net для дальнейшей обработчки
                             </div>
                             <div class="b-person-popup-form__group-submit">
-                                <button id="submit" class="b-person-popup-form__button_submit">Отправить</button>
+                                <button id="person-submit" class="b-person-popup-form__button_submit">Отправить</button>
                             </div>
-                        </from>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <div class="b-person-list" style="margin: 0 auto"> <!--todo style delete-->
@@ -602,13 +620,9 @@
                         $(document).unbind('click.hidePopup');
                         $(document).unbind('keydown.hidePopup');
                     }, 500);
-
                 }
-
             })
         })(jQuery));
-
     </script>
-
 </body>
 </html>
